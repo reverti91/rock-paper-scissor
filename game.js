@@ -59,7 +59,6 @@ const img_scissor=document.createElement('img');
 div_rock.setAttribute('id','btn_rock');
 img_rock.setAttribute('src','rock.jpg');
 div_rock.appendChild(img_rock);
-//div_paper.setAttribute('style','background-image:url("paper.jpg");background-size: "auto"');
 div_paper.setAttribute('id','btn_paper');
 img_paper.setAttribute('src','paper.jpg');
 div_paper.appendChild(img_paper);
@@ -99,10 +98,8 @@ btn_restart.addEventListener('click',()=> {
 });
 
 //Event part
-//let computer=computerPlay();
 
 div_rock.addEventListener('click', () => {
-    //alert("Hello World");
     let computer=computerPlay();
     div_player_put.textContent="Rock";
     div_computer_put.textContent=computer+"";
@@ -124,7 +121,6 @@ div_rock.addEventListener('click', () => {
 
   });
 div_paper.addEventListener('click', () => {
-    //alert("Hello World");
     let computer=computerPlay();
     div_player_put.textContent="Paper";
     div_computer_put.textContent=computer+"";
@@ -145,7 +141,6 @@ div_paper.addEventListener('click', () => {
     }
   });
 div_scissor.addEventListener('click', () => {
-    //alert("Hello World");
     let computer=computerPlay();
     div_player_put.textContent="Scissor";
     div_computer_put.textContent=computer+"";
@@ -169,11 +164,9 @@ function computerPlay(){
     const months = ["Rock", "Paper" ,"Scissor"];
 
 const random = Math.floor(Math.random() * months.length);
-//console.log(random, months[random]);
 return months[random];
 }
 
-//console.log(computer);
 
 count_win=0;
 count_lost=0;
@@ -231,19 +224,9 @@ function playSingleRound(playerSelection, computerSelection){
 
 function game(player,computer,div_result){
     let result=null;
-   
-    //let count=5;
-    //for (let i = 0; i < count; i++) {
-        //let player=prompt("Insert your choice:");
-        let statut=playSingleRound(player,computer);
-        //div_result.textContent=statut;
-        result=statut;
-        console.log(statut);
-        /*if(statut==="Invalid input, verified your input;Please!!"){
-            count=count+1;
-        }*/
-        
-    //}
+    let statut=playSingleRound(player,computer);
+    result=statut;
+       
     if(count_win<count_lost && count_lost===5){
         result="You lost the game; the comptuter win";
     }else if(count_win>count_lost && count_lost===5){
@@ -258,5 +241,5 @@ function game(player,computer,div_result){
     return result;
 
 }
-//console.log(game());
+
 
